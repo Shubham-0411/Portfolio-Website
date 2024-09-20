@@ -30,32 +30,36 @@
 //--//-->   ABOUT
 ======================================*/
 
+/* *{
+	border:  3px solid red;
+} */
 .about-mf .box-shadow-full {
   padding-top: 4rem;
   padding-bottom: 4rem;
 }
 
 .about-mf .about-img {
+	ju
   margin-bottom: 2rem;
 }
 
 .about-mf .about-img img {
   margin-left: 10px;
+  max-width: 50%; /* Ensures the image scales properly on smaller devices */
+  height: auto; /* Maintain aspect ratio */
 }
 
-
+/* Skills section */
 .skill-mf .progress {
-  /* background-color: #cde1f8; */
-  margin: .5rem 0 1.2rem 0;
+  margin: 0.5rem 0 1.2rem 0;
   border-radius: 0;
-  height: .7rem;
+  height: 0.7rem;
 }
 
 .skill-mf .progress .progress-bar {
-  height: .7rem;
+  height: 0.7rem;
   background-color: #ffbd39;
 }
-
 
 /* Animation styles */
 #typing-animation {
@@ -70,7 +74,6 @@
 
 #typing-animation:before {
   content: "";
-  /* position: absolute; */
   top: 0;
   left: 0;
   width: 0;
@@ -97,9 +100,7 @@
   }
 }
 
-
-/* project image zoom effect */
-
+/* Project image zoom effect */
 .zoom-effect {
   overflow: hidden;
   transition: transform 0.3s ease-out;
@@ -107,6 +108,47 @@
 
 .zoom-effect:hover {
   transform: scale(1.1);
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+  .about-mf .box-shadow-full {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  #typing-animation {
+    font-size: 24px; /* Smaller font size for mobile */
+  }
+
+  .about-mf .about-img img {
+    margin-left: 0;
+    width: 100%; /* Image takes up the full width */
+  }
+  
+  /* Adjusting progress bar height */
+  .skill-mf .progress {
+    height: 0.5rem;
+  }
+
+  .skill-mf .progress .progress-bar {
+    height: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  #typing-animation {
+    font-size: 20px; /* Further reduce font size on small screens */
+  }
+
+  .about-mf .box-shadow-full {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .zoom-effect {
+    transition: transform 0.2s ease-out;
+  }
 }
 
 
